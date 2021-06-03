@@ -1,6 +1,10 @@
 import pickle
 from training_model import training
+import sys
+import ast
 
+
+data = ast.literal_eval(sys.argv[1])
 
 try:
     f = open('my_classifier.pickle', 'rb')
@@ -13,4 +17,4 @@ except:
     f.close()
 
 
-print(classifier.predict([[1,1,0,0,0,0,1,1]]))
+print(classifier.predict([data]))
